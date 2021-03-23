@@ -12,6 +12,9 @@ namespace SensorValidate
             return true;
         }
         public static bool ValidateReadings(List<Double> values, double reading) {
+            if(values.Count == 0) {
+                return false;
+            }
             int lastButOneIndex = values.Count - 1;
             for (int i = 0; i < lastButOneIndex; i++)
             {
