@@ -11,10 +11,8 @@ namespace SensorValidate
             }
             return true;
         }
-        public static bool ValidateReadings(List<Double> values, double reading) {
-            if(values.Count == 0) {
-                return false;
-            }
+        public static bool ValidateSensorReadings(List<Double> values, double reading)
+        {
             int lastButOneIndex = values.Count - 1;
             for (int i = 0; i < lastButOneIndex; i++)
             {
@@ -24,6 +22,13 @@ namespace SensorValidate
                 }
             }
             return true;
+        }
+        public static bool ValidateReadings(List<Double> values, double reading)
+        {
+            if (values.Count == 0)
+                return false;
+            else
+                return ValidateSensorReadings(values,reading);
         }
     }
 }
