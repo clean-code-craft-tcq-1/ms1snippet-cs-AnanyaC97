@@ -19,5 +19,17 @@ namespace SensorValidate.Tests
                 new List<double>{0.03, 0.03, 0.03, 0.33}, 0.1
             ));
         }
+        [Fact]
+        public void reportsErrorOnEmptySOCReadings() {
+            Assert.False(SensorValidator.ValidateReadings(
+                new List<double>{}, 0.05
+            ));
+        }
+        [Fact]
+        public void reportsErrorOnEmptyCurrentReadings() {
+            Assert.False(SensorValidator.ValidateReadings(
+                new List<double>{}, 0.1
+            ));
+        }
     }
 }
