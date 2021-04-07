@@ -25,7 +25,7 @@ namespace SensorValidate
         }
         public static bool CheckSensorMeasureReadings(List<Double> values, double maxReading)
         {
-            if (values == null)
+            if (values.Count == 0)
                 return false;
             else
                 return ValidateSensorMeasureReadings(values, maxReading);
